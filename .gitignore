@@ -1,0 +1,14 @@
+/web/bundles/
+/app/bootstrap.php.cache
+/app/config/parameters.yml
+/app/cache/*
+!app/cache/.gitkeep
+/app/logs/*
+!app/logs/.gitkeep
+/app/phpunit.xml
+/build/
+/vendor/
+/bin/
+/composer.phar
+CVS
+.cvsignore

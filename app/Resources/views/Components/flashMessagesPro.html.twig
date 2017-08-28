@@ -1,0 +1,47 @@
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+
+
+	
+	{% set listOfMessages = app.session.flashbag.get('notice') %}
+	{% if listOfMessages|length > 0 %}
+
+	    	{% for flashMessage in listOfMessages %}
+
+	    	{% set flashMessageArray = flashMessage|split('#') %}
+	    	{% set flashMessageToDisplay = flashMessageArray[0] %}
+
+	    	{% set autoHideDelay = 5000 %}
+		    	$.notify('<i class="fa fa-check"></i> {{ flashMessageToDisplay|e('js') }}', {
+		    		style: 'appkit',
+		    		className: 'success',
+		    		autoHideDelay: {{ autoHideDelay }},
+		    		hideAnimation: 'fadeOut',
+		    		showAnimation: 'fadeIn'
+		    	});
+
+		    	
+			{% endfor %}
+	
+	{% endif %}
+	
+	{% set listOfMessages = app.session.flashbag.get('error') %}
+	{% if listOfMessages|length > 0 %}
+
+	    	{% for flashMessage in listOfMessages %}
+		    	$.notify('<i class="fa fa-close"></i> {{ flashMessage|e('js') }}', {
+		    		style: 'appkit',
+		    		className: 'danger',
+		    		hideAnimation: 'fadeOut',
+		    		showAnimation: 'fadeIn'
+		    	});
+			{% endfor %}
+	
+	{% endif %}
+
+});
+
+</script>

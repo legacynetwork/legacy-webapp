@@ -1,0 +1,4 @@
+services:
+#    reddit.example:
+#        class: RedditBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

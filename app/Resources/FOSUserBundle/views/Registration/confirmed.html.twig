@@ -1,0 +1,16 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+<div class="row">
+	<div class="col-sm-offset-3 col-sm-6 text-center">
+		<h1>Bienvenue ! </h1>
+		 Vous allez être redirigé vers 
+	    <a title="Cliquer pour revenir à l'accueil" href="{{ path('dashboard_homepage') }}">votre tableau de bord</a> 
+	    dans quelques secondes
+	    <meta http-equiv="refresh" content="1;URL={{ path('dashboard_homepage') }}">
+	</div>
+</div>
+
+    
+{% endblock fos_user_content %}

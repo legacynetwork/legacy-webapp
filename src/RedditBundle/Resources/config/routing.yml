@@ -1,0 +1,15 @@
+reddit_crawling:
+    path:     /crawling
+    defaults: { _controller: RedditBundle:Reddit:crawling }
+    
+reddit_homepage:
+    path:     /
+    defaults: { _controller: RedditBundle:Reddit:batch }
+
+    
+reddit_redirect:
+    path:     /redirect
+    defaults: { _controller: RedditBundle:Reddit:redirect }
+
+    
+    

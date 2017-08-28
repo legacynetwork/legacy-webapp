@@ -1,0 +1,47 @@
+
+{% include "::Components/flashMessagesPro.html.twig" %}
+
+<div class="hidden-xs" id="mobileDisplay"></div>
+<header class="header">
+			<div class="branding float-left">
+				<h1 class="logo text-center">
+				
+					
+					<a href="#">
+						<img class="logo-icon" src="{{ asset('assets/images/logo/logo_legacy_white.png') }}" alt="icon" />
+					</a>
+					
+				</h1>
+			</div>
+			<div class="topbar">
+				<button id="main-nav-toggle" class="main-nav-toggle" type="button">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<i class="icon fa fa-caret-left"></i>
+				</button>
+				<div class="navbar-tools">
+			
+					<div class="user-container dropdown">
+						<div class="dropdown-toggle" id="dropdownMenu-user" data-toggle="dropdown" aria-expanded="true" role="button">
+							<img class="img-circle" src="{% if app.user.linkedInPicture is not defined or app.user.linkedInPicture is empty %}{{ asset('assets/images/profile_default.png') }}{% else %}{{ app.user.linkedInPicture }}{% endif %}" alt="" />
+							<i class="fa fa-caret-down"></i>
+						</div>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu-user" >
+							
+						
+							<li><a role="menuitem" href="{{ path('fos_user_change_password') }}"><span class="pe-icon pe-7s-door-lock icon"></span>Modify password</a></li>
+							<li><a role="menuitem" href="{{ path('fos_user_security_logout') }}"><span class="pe-icon pe-7s-power icon"></span>Logout</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="search-container">
+					{% if title is defined %}
+						{{ title }}
+					{% endif %}
+				</div>
+			</div>
+			
+		</header>		
+			

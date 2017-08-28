@@ -1,0 +1,94 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+
+<div class="container">
+    	
+<div class="divLoginHeader hidden-xs">
+
+</div>
+
+
+<br />
+	
+<div class="row">
+	<div class="col-sm-offset-4 col-sm-4">
+	
+		<form action="{{ path("fos_user_security_check") }}" method="post">
+			    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+		
+		{% if error %}
+		    <div class="alert alert-danger">
+		    	  <div>{{ error.messageKey|trans({}, 'FOSUserBundle') }}</div>
+		    	<br />
+		    	<a style="color: gray;" href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié ?</a> 
+		    </div>
+		{% endif %}
+					
+   	  <div class="form-group">
+	    <label class="orangeLabel">Username</label>
+	    <input class="form-control input-lg orangeField" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+	  </div>	
+   	  <div class="form-group">
+	    <label class="orangeLabel">Mot de passe</label> 
+	    <input class="form-control input-lg orangeField" type="password" id="password" name="_password" required="required" />
+	  </div>
+	  
+	  <div class="checkbox">
+        <label>
+            <input  type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked" />
+            Se souvenir de moi
+        </label>
+	</div>
+			
+   	
+	  <button type="submit" id="_submit" name="_submit"  class="btn-block btn btn-primary btn-lg">Se connecter</button>
+	</form>
+	</div>
+</div>
+
+
+	<br />
+	
+<div class="row">
+	<div class="col-sm-offset-4 col-sm-4 text-center">
+	
+	<small>
+	<a style="color: gray;" href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié ?</a>
+	  </small>
+	  
+	</div>
+</div>
+	
+	<br />
+	
+<div class="row">
+	<div class="col-sm-offset-4 col-sm-4 text-center">
+	
+	<small>
+	<a  href="{{ path('fos_user_registration_register') }}">Inscription</a>
+	  </small>
+	  
+	</div>
+</div>
+	
+
+	<br /><br />
+	
+
+</div>
+
+<script type="text/javascript">
+
+window.onload = function initializeEmail() {
+	email = getParameterByName("email");
+	if (email != '') {
+		usernameInput = document.getElementById("username")
+		usernameInput.value = email;
+	}
+}
+
+</script>
+    
+{% endblock fos_user_content %}

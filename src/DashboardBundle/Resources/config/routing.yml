@@ -1,0 +1,20 @@
+dashboard_homepage:
+    path:     /
+    defaults: { _controller: DashboardBundle:Dashboard:index }
+    
+dashboard_profile_save:
+    path:     /profile/save
+    defaults: { _controller: DashboardBundle:Dashboard:profileSave }
+           
+dashboard_contact_list:
+    path:     /contact/list
+    defaults: { _controller: DashboardBundle:Dashboard:contactList }
+        
+dashboard_service_list:
+    path:     /service/list
+    defaults: { _controller: DashboardBundle:Dashboard:serviceList }
+        
+dashboard_capsule_list:
+    path:     /capsule/list
+    defaults: { _controller: DashboardBundle:Dashboard:capsuleList }
+    

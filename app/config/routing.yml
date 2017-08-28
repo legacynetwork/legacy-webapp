@@ -1,0 +1,20 @@
+reddit:
+    resource: "@RedditBundle/Resources/config/routing.yml"
+    prefix:   /reddit/api
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+dashboard:
+    resource: "@DashboardBundle/Resources/config/routing.yml"
+    prefix:   /dashboard
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+app:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /
+    

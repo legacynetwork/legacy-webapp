@@ -1,0 +1,27 @@
+
+admin_email_list:
+    path:     /email/list
+    defaults: { _controller: AdminBundle:Admin:emailList }
+ 
+admin_user_list:
+    path:     /user/list
+    defaults: { _controller: AdminBundle:Admin:userList }
+    
+admin_question_list:
+    path:     /question/list
+    defaults: { _controller: AdminBundle:Admin:questionList }
+
+admin_question_save:    
+    path:     /question/save/{id}
+    defaults: { _controller: AdminBundle:Admin:questionSave, id: 0 }
+    requirements:
+        id: \d+
+    
+    
+admin_question_delete:    
+    path:     /question/delete/{id}
+    defaults: { _controller: AdminBundle:Admin:questionDelete }
+    requirements:
+        id: \d+
+    
+    
