@@ -117,7 +117,7 @@
         <p>
           Your memories will leave a lasting impression.<br>
           We all have a story to tell or a memory to share with the people we keep close to us.<br>
-          Legacy ensures your possesions and memories will be sent to the people you love.
+          Legacy ensures your possessions and memories will be sent to the people you love.
         </p>
       </div>
     </div>
@@ -456,12 +456,21 @@
         </div>
         </div>
 			<br />
+
     </div>
 		</section>
 		<!-- /contact -->
 
     <footer>
       <div class="container white-background">
+
+        <div class="row">
+          <div class="logos">
+            <img src="{{ asset('assets/home/img/logos/logofrenchtech.png') }}" alt="logo frenchtech">
+            <img src="{{ asset('assets/home/img/logos/logonuma.png') }}" alt="logo numa">
+            <img src="{{ asset('assets/home/img/logos/logovillage.png') }}" alt="logo village">
+          </div>
+        </div>
 
         <div class="row">
           <div class="col-sm-8 margin-20">
@@ -474,8 +483,14 @@
           </div>
 
           <div class="col-sm-4 text-right">
-            <p><small>&copy; 2017. All rights reserved. <br>
-	            <a href="http://legacy.network/">Legacy</a></small></p>
+            <p>
+              31 Allée Jules Guesde<br>
+              31400, Toulouse<br>
+              France
+              <br><br><br>
+              <small>&copy; 2017. All rights reserved<br>
+	            <a href="http://legacy.network/">Legacy</a></small>
+            </p>
           </div>
         </div>
 

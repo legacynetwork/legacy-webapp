@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new DashboardBundle\DashboardBundle(),
             new AdminBundle\AdminBundle(),
             new RedditBundle\RedditBundle(),
+            new UserBundle\UserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

@@ -1,6 +1,10 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 reddit:
     resource: "@RedditBundle/Resources/config/routing.yml"
-    prefix:   /reddit/api
+    prefix:   /reddit
 
 admin:
     resource: "@AdminBundle/Resources/config/routing.yml"

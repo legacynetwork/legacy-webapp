@@ -1,0 +1,20 @@
+{% block subject %}Welcome on {{ app_name }}!{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+Helo,
+
+In order to confirm your account created on {{ app_name }}, please foloow this URL: 
+{{ confirmationUrl }}
+
+
+Cheers,
+	
+{{ app_name }} team
+
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+
+{% endblock %}

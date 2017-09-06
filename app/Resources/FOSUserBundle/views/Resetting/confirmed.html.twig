@@ -1,0 +1,15 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+<div class="row">
+	<div class="col-sm-offset-4 col-sm-4 text-center">
+		<h2>Bienvenue sur {{ app_name }} ! </h2>
+		 Vous allez être redirigé vers 
+	    <a title="Cliquer pour revenir à l'accueil" href="{{ path('aaa_accueil_redirection301') }}">votre tableau de bord</a> 
+	    dans 5 secondes
+	    <meta http-equiv="refresh" content="5;URL={{ path('aaa_accueil_redirection301') }}">
+	</div>
+</div>
+
+{% endblock fos_user_content %}

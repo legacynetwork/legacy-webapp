@@ -9,6 +9,13 @@ dashboard_profile_save:
 dashboard_contact_list:
     path:     /contact/list
     defaults: { _controller: DashboardBundle:Dashboard:contactList }
+                   
+dashboard_contact_edit:
+    path:     /contact/edit/{id}
+    defaults: { _controller: DashboardBundle:Dashboard:contactEdit, id: 0 }
+    requirements:
+        id: \d+
+        
         
 dashboard_service_list:
     path:     /service/list

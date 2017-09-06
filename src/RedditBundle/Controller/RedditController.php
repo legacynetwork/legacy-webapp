@@ -96,18 +96,11 @@ class RedditController extends Controller
 	
 	private $emailContent = "";
 	
-	private $mapOfAllLinks = array();
-	
 	
 	public function crawlingAction() {
 
 		$this->emailContent = "";
-		$listLinkFounds =  $this->getDoctrine()->getManager()->getRepository('RedditBundle:LinkFound')->findAll();
 
-		foreach($listLinkFounds as $linkFound) {
-			$this->mapOfAllLinks[$linkFound->getContent()] = $linkFound->getContent();
-		} 
-		 
 		$this->crawlingHackerNewsAction();
 		$this->crawlingRedditAction();
 
@@ -149,7 +142,7 @@ class RedditController extends Controller
 		
 			$message = (new \Swift_Message())
 			->setFrom(array('no-reply@legacy.network' => "Nous" ))
-			->setTo('nricard@unooc.fr')
+			->setTo('contact@legacy.network')
 			->setSubject("Reddit surveillance")
 			->setBody($this->emailContent, "text/html");
 			;
@@ -207,26 +200,27 @@ class RedditController extends Controller
 	
 	private function checkWordsInContent($url) {
 		
-		if (!isset($this->mapOfAllLinks[$url])) {
+			$linkFound = $this->getDoctrine()->getManager()->getRepository('RedditBundle:LinkFound')->findByContent($url);
 			
-			$content = @file_get_contents($url);
-					
-			foreach($this->arrayWordsToFind as $currentWord) {
-				foreach($this->getWordVariants($currentWord) as $word) {
-					if (($word == "LEG" && stripos($content, $word)) || ($word != "LEG" && stripos($content, $word))) {
+			if ($linkFound == null) {
+			
+				$content = @file_get_contents($url);
+						
+				foreach($this->arrayWordsToFind as $currentWord) {
+					foreach($this->getWordVariants($currentWord) as $word) {
 						$this->emailContent .= "<br />Le mot '".$word."' a été trouvé sur la page ".$url;
 						
-						$this->mapOfAllLinks[$url] = $url;
-
 						$em = $this->getDoctrine()->getManager();
 						$linkFound = new LinkFound();
 						$linkFound->setContent($url);
 						$em->persist($linkFound);
+						$em->flush();
 					}
 				}
+			
 			}
 		
-		}
+		
 	}
 	
 	private function getWordVariants($word) {

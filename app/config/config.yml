@@ -5,6 +5,7 @@ imports:
     - { resource: "@DashboardBundle/Resources/config/services.yml" }
     - { resource: "@AdminBundle/Resources/config/services.yml" }
     - { resource: "@RedditBundle/Resources/config/services.yml" }
+    - { resource: "@UserBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -73,7 +74,18 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
-    user_class: AppBundle\Entity\User
+    user_class: UserBundle\Entity\User
+    registration:
+        form:
+            type: user_registration
+            validation_groups: [legacyRegistration]
+        confirmation:
+            enabled:    true
+            template: emails/registration_confirmation.email.html.twig
+    resetting:
+        email:
+            template: emails/password_resetting.email.twig
     from_email:
-        address: "%mailer_user%"
-        sender_name: "%mailer_user%"    
+        address:        support@legacy.network
+        sender_name:    Legacy
+      
