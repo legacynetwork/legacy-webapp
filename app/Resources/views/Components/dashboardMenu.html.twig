@@ -1,41 +1,48 @@
 <div class="main-nav-wrapper">
 			<nav id="main-nav" class="main-nav js-cloak">
 				<ul id="menu">
-	
-					<li  {% if '/profile' in app.request.uri %} class="active" {% endif %}>
+
+					<li  {% if '/profile/' in app.request.uri %} class="active" {% endif %}>
 						<a href="{{ path('dashboard_profile_save') }}">
 							<i class="pe-7s-user pe-3x pe-va pe-fw"></i>
 							<span class="nav-label">Profile</span>
 						</a>
 					</li>
-					
-					<li  {% if '/contact' in app.request.uri %} class="active" {% endif %}>
+
+					<li  {% if '/contact/' in app.request.uri %} class="active" {% endif %}>
 						<a href="{{ path('dashboard_contact_list') }}">
 							<i class="pe-7s-users pe-3x pe-va pe-fw"></i>
 							<span class="nav-label">Contacts</span>
 						</a>
 					</li>
-					
-					<li  {% if '/service' in app.request.uri %} class="active" {% endif %}>
+
+					<li  {% if '/file/' in app.request.uri %} class="active" {% endif %}>
+						<a href="{{ path('dashboard_file_list') }}">
+							<i class="pe-7s-film pe-3x pe-va pe-fw"></i>
+							<span class="nav-label">Files</span>
+						</a>
+					</li>
+
+					<li  {% if '/capsule/' in app.request.uri %} class="active" {% endif %}>
+						<a href="{{ path('dashboard_capsule_list') }}">
+							<i class="pe-7s-rocket pe-3x pe-va pe-fw"></i>
+							<span class="nav-label">Capsules</span>
+						</a>
+					</li>
+
+					<li  {% if '/service/' in app.request.uri %} class="active" {% endif %}>
 						<a href="{{ path('dashboard_service_list') }}">
 							<i class="pe-7s-science pe-3x pe-va pe-fw"></i>
 							<span class="nav-label">Services</span>
 						</a>
 					</li>
-						
-					<li  {% if '/capsule' in app.request.uri %} class="active" {% endif %}>
-						<a href="{{ path('dashboard_capsule_list') }}">
-							<i class="pe-7s-film pe-3x pe-va pe-fw"></i>
-							<span class="nav-label">Capsules</span>
-						</a>
-					</li>
-						
-					
-					{% if is_granted('ROLE_ADMIN') %}	
-					
+
+
+					{% if is_granted('ROLE_ADMIN') %}
+
 					<li role="presentation" class="divider ">
 					</li>
-					
+
 					<li {% if '/admin/email' in app.request.uri %} class="active" {% endif %}>
 						<a href="{{ path('admin_email_list') }}">
 							<span class="nav-label">Admin Emails</span>
@@ -51,10 +58,10 @@
 							<span class="nav-label">Admin Q&A</span>
 						</a>
 					</li>
-	
-					
+
+
 					{% endif %}
-			
+
 				</ul>
 			</nav>
-		</div>	
+		</div>

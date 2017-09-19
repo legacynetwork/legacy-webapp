@@ -21,6 +21,22 @@ class User extends BaseUser
 	private $contacts;
 	
 	
+
+	/**
+	 * @ORM\OneToMany(targetEntity="DashboardBundle\Entity\Capsule", mappedBy="user")
+	 * @ORM\OrderBy({"dateCreation" = "DESC"})
+	 */
+	private $capsules;
+	
+	
+
+	/**
+	 * @ORM\OneToMany(targetEntity="DashboardBundle\Entity\File", mappedBy="user")
+	 * @ORM\OrderBy({"id" = "DESC"})
+	 */
+	private $files;
+	
+	
 	
 	
 	public function getRolesInString() {
@@ -93,5 +109,71 @@ class User extends BaseUser
     public function getContacts()
     {
         return $this->contacts;
+    }
+
+    /**
+     * Add capsules
+     *
+     * @param \DashboardBundle\Entity\Capsule $capsules
+     * @return User
+     */
+    public function addCapsule(\DashboardBundle\Entity\Capsule $capsules)
+    {
+        $this->capsules[] = $capsules;
+
+        return $this;
+    }
+
+    /**
+     * Remove capsules
+     *
+     * @param \DashboardBundle\Entity\Capsule $capsules
+     */
+    public function removeCapsule(\DashboardBundle\Entity\Capsule $capsules)
+    {
+        $this->capsules->removeElement($capsules);
+    }
+
+    /**
+     * Get capsules
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCapsules()
+    {
+        return $this->capsules;
+    }
+
+    /**
+     * Add files
+     *
+     * @param \DashboardBundle\Entity\File $files
+     * @return User
+     */
+    public function addFile(\DashboardBundle\Entity\File $files)
+    {
+        $this->files[] = $files;
+
+        return $this;
+    }
+
+    /**
+     * Remove files
+     *
+     * @param \DashboardBundle\Entity\File $files
+     */
+    public function removeFile(\DashboardBundle\Entity\File $files)
+    {
+        $this->files->removeElement($files);
+    }
+
+    /**
+     * Get files
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFiles()
+    {
+        return $this->files;
     }
 }

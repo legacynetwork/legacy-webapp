@@ -12,6 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Contact
 {
+	
+	public function getFullname() {
+		return $this->firstname." ".$this->lastname;
+	}
+	
     /**
      * @var int
      *
@@ -28,6 +33,13 @@ class Contact
      */
     private $user;
     
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity="DashboardBundle\Entity\Capsule", mappedBy="contacts")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $capsules;
     
     
     /**
@@ -212,5 +224,45 @@ class Contact
     public function getUser()
     {
         return $this->user;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->capsules = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add capsules
+     *
+     * @param \DashboardBundle\Entity\Capsule $capsules
+     * @return Contact
+     */
+    public function addCapsule(\DashboardBundle\Entity\Capsule $capsules)
+    {
+        $this->capsules[] = $capsules;
+
+        return $this;
+    }
+
+    /**
+     * Remove capsules
+     *
+     * @param \DashboardBundle\Entity\Capsule $capsules
+     */
+    public function removeCapsule(\DashboardBundle\Entity\Capsule $capsules)
+    {
+        $this->capsules->removeElement($capsules);
+    }
+
+    /**
+     * Get capsules
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCapsules()
+    {
+        return $this->capsules;
     }
 }

@@ -38,7 +38,9 @@
 				{{ user.rolesInString }}
 			</td>
 			<td>
-				{{ user.lastLogin|date("Y-m-d H:i") }}
+				{% if user.lastLogin.timestamp is defined %}
+					{{ user.lastLogin|date("Y-m-d H:i") }}
+				{% endif %}
 			</td>
 		</tr>
 		{% endfor %}
