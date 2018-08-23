@@ -2168,6 +2168,14 @@ input, select, textarea {
 			min-width: 14em;
 		}
 
+		input[type="submit"].narrow,
+		input[type="reset"].narrow,
+		input[type="button"].narrow,
+		button.narrow,
+		.button.narrow {
+			max-width: 3em;
+		}
+
 		input[type="submit"].disabled, input[type="submit"]:disabled,
 		input[type="reset"].disabled,
 		input[type="reset"]:disabled,
