@@ -1,0 +1,27 @@
+{
+  "name": "legacy-webapp",
+  "version": "0.0.2",
+  "description": "legacy dapp",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legacynetwork/legacy-webapp.git"
+  },
+  "author": "legacy network",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/legacynetwork/legacy-webapp/issues"
+  },
+  "homepage": "https://github.com/legacynetwork/legacy-webapp#readme"
+}
