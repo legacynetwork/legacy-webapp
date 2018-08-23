@@ -187,3 +187,10 @@ typings/
 #################
 ## /BASE RESET ##
 #################
+
+
+### Project template
+
+legacy/media/
+
+.pytest_cache/
