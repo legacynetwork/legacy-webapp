@@ -1,0 +1,5 @@
+django
+environ
+ipython
+requests
+django-debug-toolbar
