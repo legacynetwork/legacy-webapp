@@ -334,18 +334,19 @@
             <section class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
                 <div class="inner medium">
                     <h2 class="fontcolorwhite">Get in touch</h2>
-                    <form method="post" action="#">
+                    <form method="post" action="message_thanks/">
+                        {% csrf_token %}
                         <div class="fields">
                             <div class="field half">
                                 <label class="fontcolorwhite" for="name">Name</label>
                                 <input type="text" name="name" id="name" value="" />
                             </div>
                             <div class="field half">
-                                <label class="fontcolorwhite"  for="email">Email</label>
-                                <input type="email" name="email" id="email" value="" />
+                                <label class="fontcolorwhite" for="from_email">Email</label>
+                                <input type="email" name="from_email" id="from_email" value="" />
                             </div>
                             <div class="field">
-                                <label class="fontcolorwhite"  for="message">Message</label>
+                                <label class="fontcolorwhite" for="message">Message</label>
                                 <textarea name="message" id="message" rows="6"></textarea>
                             </div>
                         </div>
@@ -353,7 +354,6 @@
                             <li><input class="fontcolorwhite" type="submit" name="submit" id="submit" value="Send Message" /></li>
                         </ul>
                     </form>
-
                 </div>
             </section>
 
@@ -361,7 +361,8 @@
             <section class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
                 <div class="inner small">
                     <h2 class="fontcolorwhite">Stay up to date...</h2>
-                    <form method="post" action="#">
+                    <form method="post" action="email_thanks/">
+                        {% csrf_token %}
                         <div class="fields">
                             <div class="field">
                                 <input type="email" name="email" id="email" value="" placeholder="email@domain.com"/>
