@@ -3,3 +3,6 @@ environ
 ipython
 requests
 django-debug-toolbar
+gunicorn
+pytz
+pipenv
