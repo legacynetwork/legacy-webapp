@@ -331,10 +331,10 @@
             </section>
 
         <!-- contact form -->
-            <section class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
+            <section id="contact" class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
                 <div class="inner medium">
                     <h2 class="fontcolorwhite">Get in touch</h2>
-                    <form method="post" action="message_thanks/">
+                    <form method="post" action="support/thanks_message/">
                         {% csrf_token %}
                         <div class="fields">
                             <div class="field half">
@@ -358,10 +358,10 @@
             </section>
 
         <!-- email form -->
-            <section class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
+            <section id="subscribe" class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
                 <div class="inner small">
                     <h2 class="fontcolorwhite">Stay up to date...</h2>
-                    <form method="post" action="email_thanks/">
+                    <form method="post" action="support/thanks_email/">
                         {% csrf_token %}
                         <div class="fields">
                             <div class="field">
