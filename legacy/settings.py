@@ -132,3 +132,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
 
 
 AUTH_USER_MODEL = 'users.User'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'

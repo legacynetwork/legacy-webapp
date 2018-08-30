@@ -6,7 +6,7 @@ from .models import User
 
 
 class UserAdmin(UserAdmin):
-    list_display = ['created', 'email', 'first_name', 'last_name', ]
+    list_display = ['email', 'created', 'first_name', 'last_name', ]
     add_form = UserCreationForm
     form = UserChangeForm
     model = User

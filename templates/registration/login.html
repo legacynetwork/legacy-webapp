@@ -1,7 +1,22 @@
-<!-- templates/registration/login.html -->
-<h2>Login</h2>
+{% extends 'base.html' %}
+
+<style type="text/css">
+    body {
+        background-color: #4b8cc0;
+        font-family: 'sans-serif';
+        color: white;
+    }
+    h1 {
+        text-align: center
+    }
+</style>
+
+
+{% block content %}
+<h1>Login</h1>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Login</button>
 </form>
+{% endblock %}
