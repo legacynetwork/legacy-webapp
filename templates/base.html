@@ -48,10 +48,10 @@
     <body>
         {% if messages %}
         {% for message in messages %}
-        <div class="message {% if message.tags %}alert-{{ message.tags }}{% endif %}"> {{ message }}
-            <a class="close" href="#">X</a>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{ message }}
         </div>
-        <!-- <div class="message {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div> -->
         {% endfor %}
         {% endif %}
 
@@ -75,12 +75,5 @@
         ga('create', 'UA-103567170-1', 'auto');
         ga('send', 'pageview');
         </script>
-
-        <script>
-        $('message.close').on('click', function() {
-            $(this).parent().hide();
-        });
-        </script>
-
     </body>
 </html>
