@@ -8755,3 +8755,16 @@ input, select, textarea {
         margin-top: 1em;
         margin-bottom: 1em;
     }
+
+
+/* Messages */
+
+.message {
+    text-align: center;
+    width:100%;
+    height:40px;
+    background-color: #f06543;
+    color: white;
+    position: fixed;
+    top: 0px;
+}
