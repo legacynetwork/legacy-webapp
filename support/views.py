@@ -13,7 +13,7 @@ class HomeView(TemplateView):
 
 
 class EmailView(SuccessMessageMixin, FormView):
-    template_name = 'thanks_email.html'
+    template_name = 'home.html'
     form_class = EmailForm
     success_url = '/#subscribe'
     success_message = "Thanks, we'll keep you up to date"
@@ -30,7 +30,7 @@ class EmailView(SuccessMessageMixin, FormView):
 
 
 class MessageView(SuccessMessageMixin, FormView):
-    template_name = 'thanks_message.html'
+    template_name = 'home.html'
     form_class = MessageForm
     success_url = '/#contact'
     success_message = "Thanks, we'll answer as soon as possible"
