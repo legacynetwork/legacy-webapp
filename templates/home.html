@@ -334,7 +334,7 @@
             <section id="contact" class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
                 <div class="inner medium">
                     <h2 class="fontcolorwhite">Get in touch</h2>
-                    <form method="post" action="support/thanks_message/">
+                    <form method="post" action="{% url 'support:thanks_message' %}#contact">
                         {% csrf_token %}
                         <div class="fields">
                             <div class="field half">
@@ -361,7 +361,7 @@
             <section id="subscribe" class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
                 <div class="inner small">
                     <h2 class="fontcolorwhite">Stay up to date...</h2>
-                    <form method="post" action="support/thanks_email/">
+                    <form method="post" action="{% url 'support:thanks_email' %}#subscribe">
                         {% csrf_token %}
                         <div class="fields">
                             <div class="field">
