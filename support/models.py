@@ -2,7 +2,6 @@ from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
 
-
 class Message(TimeStampedModel):
     name = models.CharField(max_length=100)
     from_email = models.EmailField()

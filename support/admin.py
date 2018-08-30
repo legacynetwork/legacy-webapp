@@ -4,7 +4,7 @@ from .models import Message, EmailSuscriber
 
 
 class MessageAdmin(admin.ModelAdmin):
-    list_display = [ 'created', 'from_email', 'name', 'message', ]
+    list_display = ['created', 'from_email', 'name', 'message', ]
 
 
 class EmailSuscriberAdmin(admin.ModelAdmin):
