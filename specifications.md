@@ -91,9 +91,10 @@ legacydapp.com
     - CapsuleSettings
 - memories
     - Memory
+    - https://github.com/jeffbr13/django-ipfs-storage
 - plugins
     - Plugin
 - core?
 - eth_events (https://github.com/gnosis/django-eth-events, https://github.com/gnosis/django-eth)
-- app_events
-- file_events
+- app_events 
+- file_events (https://github.com/jeffbr13/django-ipfs-storage)
