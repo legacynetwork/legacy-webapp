@@ -24,7 +24,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phonenumber_field',
     'support',
+    'users',
+    'memories',
+    'plugins',
 ]
 # local
 if DEBUG:
@@ -124,3 +128,6 @@ INTERNAL_IPS = [
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
+
+
+AUTH_USER_MODEL = 'users.User'
