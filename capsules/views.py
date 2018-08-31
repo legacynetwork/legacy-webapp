@@ -26,6 +26,12 @@ class CapsuleDetailView(generic.DetailView):
 class CapsuleUpdateView(generic.UpdateView):
     model = Capsule
     pk_url_kwarg = 'capsule_id'
+    fields = [
+        'name',
+        'description',
+        'image',
+        'assignees',
+    ]
 
 
 class CapsuleDeleteView(generic.DeleteView):

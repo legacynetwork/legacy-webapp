@@ -11,9 +11,10 @@
     <div class="">
 
       <h2>{{ object.name }}</h2>
-      {% if object.name %}
-        <p>{{ object.name }}</p>
-      {% endif %}
+      <br>
+      <a href="{% url 'capsules:capsule_delete' object.id %}">delete</a>
+      <br>
+      <a href="{% url 'capsules:capsule_edit' object.id %}">edit</a>
     </div>
   </div>
 

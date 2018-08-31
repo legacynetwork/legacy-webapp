@@ -47,6 +47,9 @@ class Memory(TimeStampedModel):
     class Meta:
         verbose_name_plural = "memories"
 
+    def __str__(self):
+        return f"{self.capsule.user.id} | {self.file}"
+
     def get_file_type(self):
         extension = os.path.splitext(self.file)[1][1:]
         return extension
