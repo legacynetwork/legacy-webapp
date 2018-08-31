@@ -31,7 +31,6 @@ class Capsule(TimeStampedModel):
 
     def __str__(self):
         return f"{self.user.id}|{self.name}-active:{self.active}"
-        # return "{}|{}-active:{}".format(self.user.id, self.name, self.active)
 
 
 class Memory(TimeStampedModel):

@@ -10,13 +10,7 @@ class CapsuleListView(generic.ListView):
 
 class CapsuleCreateView(generic.CreateView):
     model = Capsule
-    fields = [
-        'name',
-        "active",
-        "state",
-        "description",
-        "image",
-    ]
+    fields = ['name', "active", "state", "description", "image", ]
     success_url = reverse_lazy('capsules:capsule_list')
 
     def form_valid(self, form):
@@ -29,10 +23,11 @@ class CapsuleDetailView(generic.DetailView):
     pk_url_kwarg = 'capsule_id'
 
 
-
 class CapsuleUpdateView(generic.UpdateView):
     model = Capsule
+    pk_url_kwarg = 'capsule_id'
 
 
 class CapsuleDeleteView(generic.DeleteView):
     model = Capsule
+    pk_url_kwarg = 'capsule_id'
