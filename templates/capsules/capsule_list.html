@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}Members{% endblock %}
+
+{% block content %}
+<div class="">
+  <h2>Capsules</h2>
+
+  <div class="">
+    {% for capsule in capsule_list %}
+      <a href="{% url 'capsules:capsule_detail' capsule.id %}" class="">
+        <h4 class="">{{ capsule.id }}-{{ capsule.name }}</h4>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
