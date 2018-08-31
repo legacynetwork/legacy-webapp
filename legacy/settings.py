@@ -31,6 +31,7 @@ THIRD_PARTY_APPS = [
     'phonenumber_field',
 ]
 INTERNAL_APPS = [
+    'capsules',
     'support',
     'users',
     'plugins',
@@ -137,3 +138,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
 AUTH_USER_MODEL = 'users.User'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+APPEND_SLASH = False
