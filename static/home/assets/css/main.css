@@ -8654,7 +8654,9 @@ input, select, textarea {
 		}
 
 		#wrapper > .colorlegacyblue {
-			background-color: #4b8cc0;
+			background-color: #007FFF;
+			/* background-color: #4b8cc0; */ /* original */
+            /* background-color: #1874CD; */
 		}
 
 		#wrapper > .colorlegacylightgray {

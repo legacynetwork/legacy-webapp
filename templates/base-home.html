@@ -1,4 +1,4 @@
-{% load static i18n %}<!DOCTYPE html>
+{% extends "base.html" %}{% load static i18n %}<!DOCTYPE html>
 <html lang="en">
 	<head>
         <meta charset="utf-8" />
@@ -39,8 +39,8 @@
 
 
         {% block css %}
-        <link rel="stylesheet" href="{% static '/css/style.css' %}" />
-
+        <link rel="stylesheet" href="{% static 'home/assets/css/main.css' %}" />
+        <noscript><link rel="stylesheet" href="{% static 'home/assets/css/noscript.css' %}" /></noscript>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         {% endblock %}
 
