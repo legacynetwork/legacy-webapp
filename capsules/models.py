@@ -1,8 +1,11 @@
 import os.path
 
+from django.contrib.auth import get_user_model
 from django.db import models
-from users.models import User
 from django_extensions.db.models import TimeStampedModel
+
+
+User = get_user_model()
 
 
 COMPRESSION_TOOL = 'tar'
@@ -13,7 +16,6 @@ class Capsule(TimeStampedModel):
     """
     Capsule model
     """
-    # state choice for capsule
     CAPSULE_STATE_CHOICES = [
         ('o', 'offchain'),
         ('e', 'empty'),
@@ -34,7 +36,6 @@ class Capsule(TimeStampedModel):
 
 
 class Memory(TimeStampedModel):
-    # state choice for capsule
     MEMORY_STATE_CHOICES = [
         ('u', 'uploading'),
         ('d', 'done'),
