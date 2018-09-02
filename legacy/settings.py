@@ -13,7 +13,7 @@ SECRET_KEY = env(
 
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = ['legacydapp.com']
+ALLOWED_HOSTS = ['legacydapp.com', ]
 if DEBUG:
     ALLOWED_HOSTS = ['localhost', 'local', '127.0.0.1']
 
@@ -36,6 +36,7 @@ THIRD_PARTY_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'django_extensions'
 ]
 INTERNAL_APPS = [
     'capsules',
@@ -90,7 +91,7 @@ WSGI_APPLICATION = 'legacy.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///legacy'),
+    'default': env.db('DATABASE', default='postgres:///legacy'),
 }
 
 # Password validation
