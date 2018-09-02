@@ -1,5 +1,9 @@
 from django.urls import path
 
+# decorating the class views in urls:
+# https://docs.djangoproject.com/en/dev/topics/class-based-views/intro/#decorating-class-based-views
+# from allauth.account.decorators import verified_email_required
+
 from . import views
 
 

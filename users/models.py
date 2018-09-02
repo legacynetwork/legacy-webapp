@@ -1,11 +1,16 @@
-from django.contrib.auth.models import AbstractUser
-from django.db import models
+from django.contrib.auth.models import AbstractUser, UserManager
 from django.utils.translation import ugettext_lazy as _
+from django.db import models
 
 from phonenumber_field.modelfields import PhoneNumberField
 
 
+class UserManager(UserManager):
+    pass
+
+
 class User(AbstractUser):
+
     # email = models.EmailField(_('email address'), max_length=40, unique=True)
     is_registered = models.BooleanField(_('registered'), default=False)
     created = models.DateTimeField(auto_now_add=True)
@@ -28,11 +33,11 @@ class User(AbstractUser):
 
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
 
-    # USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['email', ]
+    objects = UserManager()
 
     def __str__(self):
         return "{}-{}".format(self.email, self.first_name)
+
 
 
 class Emails(models.Model):

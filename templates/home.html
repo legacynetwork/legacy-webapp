@@ -2,6 +2,20 @@
 {% load static %}
 {% block content %}
 <!-- Wrapper -->
+    <div class="wrapper">
+        {% load socialaccount %}
+
+        <h1>legacy auth</h1>
+        {% if user.is_authenticated %}
+        <p>Welcome {{ user.username }}</p>
+        <p><a href="{% url 'account_logout' %}">Log out</a>
+        {% else %}
+        <p><a href="{% url 'account_signup' %}">Sign Up</a></p>
+        <p><a href="{% url 'account_login' %}">Log In </a></p>
+        <p><a href="{% provider_login_url 'google' %}">Log In with Gmail</a></p>
+        {% endif %}
+    </div>
+
     <div id="wrapper" class="divided">
         <!-- intro -->
             <section class="banner style5 colorlegacyblue orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
