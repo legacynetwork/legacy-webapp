@@ -20,6 +20,8 @@ if DEBUG:
 
 # Application definition
 INSTALLED_APPS = [
+    # third party but needs to be up here
+    'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

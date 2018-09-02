@@ -6,3 +6,5 @@ django-debug-toolbar
 gunicorn
 pytz
 pipenv
+allauth
+djangocms_admin_style

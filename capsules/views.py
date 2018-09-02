@@ -25,13 +25,13 @@ class CapsuleCreateView(generic.CreateView):
         return super().form_valid(form)
 
 
-@methods_decorator(verified_email_required, name='dispatch')
+@method_decorator(verified_email_required, name='dispatch')
 class CapsuleDetailView(generic.DetailView):
     model = Capsule
     pk_url_kwarg = 'capsule_id'
 
 
-@methods_decorator(verified_email_required, name='dispatch')
+@method_decorator(verified_email_required, name='dispatch')
 class CapsuleUpdateView(generic.UpdateView):
     model = Capsule
     pk_url_kwarg = 'capsule_id'
@@ -43,7 +43,7 @@ class CapsuleUpdateView(generic.UpdateView):
     ]
 
 
-@methods_decorator(verified_email_required, name='dispatch')
+@method_decorator(verified_email_required, name='dispatch')
 class CapsuleDeleteView(generic.DeleteView):
     model = Capsule
     pk_url_kwarg = 'capsule_id'

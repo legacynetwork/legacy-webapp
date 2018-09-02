@@ -10,6 +10,25 @@ class UserAdmin(UserAdmin):
     model = CustomUser
     add_form = UserCreationForm
     form = UserChangeForm
+    readonly_fields = ('updated', 'last_login', 'date_joined')
+
+    fieldsets = UserAdmin.fieldsets + (
+        (None, {
+            'fields': (
+                # read-only ^
+                'updated',
+            )}),
+        ('Legacy Fields', {
+            'fields': (
+                'is_registered',
+                'birth_date',
+                'death_date',
+                'postal_address',
+                'phone_number',
+                'secondary_phone_number',
+                'avatar',
+        )})
+    )
 
 
 admin.site.register(CustomUser, UserAdmin)
