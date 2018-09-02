@@ -4,10 +4,11 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from django_extensions.db.models import TimeStampedModel
 from phonenumber_field.modelfields import PhoneNumberField
 
 
-class Profile(models.Model):
+class Profile(TimeStampedModel):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     created = models.DateTimeField(auto_now_add=True)
