@@ -8,3 +8,4 @@ pytz
 pipenv
 allauth
 djangocms_admin_style
+django-sendgrid-v5

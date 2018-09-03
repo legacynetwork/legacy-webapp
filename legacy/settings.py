@@ -13,14 +13,12 @@ SECRET_KEY = env(
 
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = ['legacydapp.com']
+ALLOWED_HOSTS = ['legacydapp.com', 'www.legacydapp.com', ]
 if DEBUG:
-    ALLOWED_HOSTS = ['localhost', 'local', '127.0.0.1']
+    ALLOWED_HOSTS += ['localhost', 'local', '127.0.0.1', ]
 
 
-# Application definition
 INSTALLED_APPS = [
-    # third party but needs to be up here
     'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -159,8 +157,67 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 SITE_ID = 1
 
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-
-
 APPEND_SLASH = False
+
+ADMINS = [('errors', 'errors@legacydapp.com'), ('legacy admins', 'admins@chainimpact.io')]
+MANAGERS = ADMINS
+
+DEFAULT_FROM_EMAIL = 'your.email@example.com'
+
+# email + sendgrid
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+
+# EMAIL_HOST = env('EMAIL_HOST', default='smtp.sendgrid.net')
+# EMAIL_PORT = env('EMAIL_PORT', default='587')
+# EMIAL_HOST_USER = env('EMIAL_HOST_USER', default='sendgrid_username')
+# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='sendgrid_password')
+# EMAIL_USE_TLS = True
+SENDGRID_API_KEY = env('SENDGRID_API_KEY', default='sendgrid_api_key')
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+
+# BEHOLD THE HOLY LOGS
+LOGGING_FILE = '{}'.format(
+    '/tmp/legacy.log' if DEBUG
+    else '/var/log/legacy/legacy.log')
+
+LOGGING = {
+    # OTHER OPTIONS
+    "version": 1,
+    "disable_existing_loggers": False,
+    'filters': {
+        # OTHER FILTERS
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        # OTHER HANDLERS
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': LOGGING_FILE,
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            # 'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        # OTHER LOGGERS
+        'management_commands': {
+            'handlers': ['console', 'mail_admins', ],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'django': {
+            'handlers': ['file', 'console', ],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    }
+}
