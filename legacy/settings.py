@@ -34,6 +34,7 @@ THIRD_PARTY_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'django_extensions',
 ]
 INTERNAL_APPS = [
     'capsules',
@@ -47,7 +48,6 @@ INSTALLED_APPS += THIRD_PARTY_APPS + INTERNAL_APPS
 if DEBUG:
     INSTALLED_APPS += [
         'debug_toolbar',
-        'django_extensions',
     ]
 
 MIDDLEWARE = [
