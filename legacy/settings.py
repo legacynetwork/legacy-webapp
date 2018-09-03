@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = env(
     'DJANGO_SECRET_KEY',
-    default='K64lzmCtvla6s3uinB4KTHuXWsWjMonHHJGHFHtNtAZKrCRiGvmOBuLjVPTLBwgD'
+    default='local-secret-key'
     )
 
 DEBUG = env.bool('DJANGO_DEBUG', False)
