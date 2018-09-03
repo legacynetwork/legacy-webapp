@@ -13,3 +13,4 @@ django-phonenumber-field
 django_extensions
 psycopg2-binary
 Pillow
+django-sendgrid-v5
