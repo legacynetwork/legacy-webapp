@@ -3,6 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 from phonenumber_field.modelfields import PhoneNumberField
+from django_eth.models import EthereumAddressField
 
 
 class UserManager(UserManager):
@@ -38,6 +39,8 @@ class User(AbstractUser):
     ssn = models.CharField(max_length=50, blank=True, null=True)
 
     avatar = models.ImageField(_('avatar'), upload_to='avatars/', null=True, blank=True)
+
+    eth_address = EthereumAddressField()
 
     objects = UserManager()
 

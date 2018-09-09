@@ -35,7 +35,10 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'django_extensions',
+    # 'django_eth_events',
+    'django_eth',
 ]
+
 INTERNAL_APPS = [
     'capsules',
     'support',
@@ -221,3 +224,8 @@ LOGGING = {
         },
     }
 }
+
+# ETHEREUM_NODE_URL = os.environ['HTTP://127.0.0.1:7545']
+ETHEREUM_NODE_URL = 'HTTP://127.0.0.1:7545'
+# ETHEREUM_MAX_WORKERS = os.environ['ETHEREUM_MAX_WORKERS']
+ETHEREUM_MAX_WORKERS = 3
