@@ -1,7 +1,10 @@
 import os
 
 from django.test import TestCase, Client
+<<<<<<< Updated upstream
 from django.urls import reverse
+=======
+>>>>>>> Stashed changes
 from django.core.files import File
 from django.conf import settings
 
@@ -96,11 +99,23 @@ class CapsuleModelTest(TestCase):
         # {self.user.id}|{self.name}-active:{self.active}"
         self.assertEqual(capsule_str, "1|First Capsule-active:True")
 
+<<<<<<< Updated upstream
     def test_memory_plural_verbose(self):
         self.assertEqual(str(Memory._meta.verbose_name_plural), "memories")
 
+=======
+>>>>>>> Stashed changes
     def test_get_file_type(self):
         self.assertEqual(self.memory.get_file_type(), "png")
 
     def test_get_absolute_url(self):
         self.assertIsNotNone(self.capsule.get_absolute_url())
+<<<<<<< Updated upstream
+=======
+
+
+class MemoryModelTest(TestCase):
+
+    def test_memory_plural_verbose(self):
+        self.assertEqual(str(Memory._meta.verbose_name_plural), "memories")
+>>>>>>> Stashed changes

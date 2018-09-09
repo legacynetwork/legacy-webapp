@@ -37,6 +37,21 @@ class Capsule(TimeStampedModel):
     def get_absolute_url(self):
         return reverse('capsules:capsule_detail', kwargs={'capsule_id': self.pk})
 
+<<<<<<< Updated upstream
+=======
+    def initial_transaction(self):
+        pass
+
+    def update_memory(self):
+        pass
+
+    def upload_capsule(self):
+        pass
+
+    def execute(self):
+        pass
+
+>>>>>>> Stashed changes
 
 class Memory(TimeStampedModel):
     MEMORY_STATE_CHOICES = [
