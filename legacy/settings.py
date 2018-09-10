@@ -165,7 +165,7 @@ APPEND_SLASH = False
 ADMINS = [('errors', 'errors@legacydapp.com'), ('legacy admins', 'admins@chainimpact.io')]
 MANAGERS = ADMINS
 
-DEFAULT_FROM_EMAIL = 'your.email@example.com'
+DEFAULT_FROM_EMAIL = 'message@legacydapp.com'
 
 # email + sendgrid
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
@@ -229,3 +229,6 @@ LOGGING = {
 ETHEREUM_NODE_URL = 'HTTP://127.0.0.1:7545'
 # ETHEREUM_MAX_WORKERS = os.environ['ETHEREUM_MAX_WORKERS']
 ETHEREUM_MAX_WORKERS = 3
+
+# TODO: webjs provider
+# WEB3_HTTP_PROVIDER = env('WEB3_HTTP_PROVIDER', default='https://rinkeby.infura.io')

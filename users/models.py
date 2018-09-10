@@ -48,6 +48,32 @@ class User(AbstractUser):
         return "{}-{}".format(self.email, self.first_name)
 
 
+class UserAction(TimeStampedModel):
+    """Records Actions users make."""
+
+    # TODO: add all use case and finish types
+    ACTION_TYPES = [
+        ('login', 'Login'),
+        ('logout', 'Logout'),
+        ('added_capsule', 'Added Capsule'),
+        ('updated_capsule', 'Updated Capsule'),
+        ('deleted_capsule', 'Deleted Capsule'),
+        ('added_memory', 'Added Memory'),
+        ('updated_memory', 'Updated Memory'),
+        ('deleted_memory', 'Deleted Memory'),
+        ('confirmed_transaction', 'Confirmed Transaction'),
+        ('pushed_transaction', 'Pushed Transaction'),
+        ('updated_avatar', 'Updated Avatar'),
+    ]
+    action = models.CharField(max_length=50, choices=ACTION_TYPES)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    ip_address = models.GenericIPAddressField(null=True)
+    location_data = JSONField(default=dict)
+    metadata = JSONField(default=dict)
+
+    def __str__(self):
+        return f"{self.action} | {self.user} | {self.created}"
+
 
 class Emails(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
