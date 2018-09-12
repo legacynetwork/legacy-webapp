@@ -14,3 +14,5 @@ django_extensions
 psycopg2-binary
 Pillow
 django-sendgrid-v5
+django-eth
+django-eth-events
