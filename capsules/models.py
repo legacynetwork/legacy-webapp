@@ -29,7 +29,7 @@ class Capsule(TimeStampedModel):
     description = models.CharField(max_length=200)
     image = models.ImageField(upload_to='capsule_covers/', null=True, blank=True)
 
-    assignees = models.ManyToManyField(User, related_name="assignees")
+    beneficiaries = models.ManyToManyField(User, related_name="beneficiaries")
 
     def __str__(self):
         return f"{self.user.id}|{self.name}-active:{self.active}"

@@ -39,7 +39,7 @@ class CapsuleUpdateView(generic.UpdateView):
         'name',
         'description',
         'image',
-        'assignees',
+        'beneficiaries',
     ]
 
 
