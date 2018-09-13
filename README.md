@@ -1,5 +1,5 @@
 # legacy
-![logo](http://www.legacydapp.com/home/images/logo-long-blue.png "legacy logo")
+![logo](https://www.legacydapp.com/static/home/images/logo-long-blue.png "legacy logo")
 ## An ethereum, blockchain-based smart will solution for the digital era
 
 
