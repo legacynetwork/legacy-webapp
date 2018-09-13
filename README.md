@@ -15,3 +15,8 @@ Resources:
 
 
 [homepage](http://www.legacydapp.com/)
+
+
+Dependencies:
+
+sudo apt-get install python-dev python3-dev python3.6-dev
