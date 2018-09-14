@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 from phonenumber_field.modelfields import PhoneNumberField
-from django_eth.models import EthereumAddressField
+# from django_eth.models import EthereumAddressField
 
 
 class UserManager(UserManager):
@@ -40,13 +40,13 @@ class User(AbstractUser):
 
     avatar = models.ImageField(_('avatar'), upload_to='avatars/', null=True, blank=True)
 
-    eth_address = EthereumAddressField(null=True, blank=True)
+    # eth_address = EthereumAddressField(null=True, blank=True)
+    eth_address = models.CharField(max_length=50, blank=True)
 
     objects = UserManager()
 
     def __str__(self):
         return "{}-{}".format(self.email, self.first_name)
-
 
 
 class Emails(models.Model):
