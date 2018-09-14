@@ -40,7 +40,7 @@ class User(AbstractUser):
 
     avatar = models.ImageField(_('avatar'), upload_to='avatars/', null=True, blank=True)
 
-    eth_address = EthereumAddressField()
+    eth_address = EthereumAddressField(null=True, blank=True)
 
     objects = UserManager()
 
