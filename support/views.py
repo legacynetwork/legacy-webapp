@@ -4,7 +4,7 @@ from django.views.generic import TemplateView, FormView
 
 
 from .forms import MessageForm, EmailForm
-from .models import Message, EmailSuscriber
+from .models import EmailMessage, EmailSuscriber
 
 
 class HomeView(TemplateView):
@@ -38,7 +38,7 @@ class MessageView(SuccessMessageMixin, FormView):
     def form_valid(self, form):
         # This method is called when valid form data has been POSTed.
         # It should return an HttpResponse.
-        new_message = Message(
+        new_message = EmailMessage(
             from_email = form.cleaned_data['from_email'],
             name = form.cleaned_data['name'],
             message = form.cleaned_data['message'],

@@ -12,8 +12,8 @@ urlpatterns = [
     path('capsules/', include('capsules.urls')),
 
     # user and auth
-    path('users/', include('users.urls')),
-    path('accounts/', include('allauth.urls')),
+    # path('users/', include('users.urls')),
+    path('users/', include('allauth.urls')),
 ]
 
 if settings.DEBUG:

@@ -13,7 +13,8 @@ SECRET_KEY = env(
 
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = ['legacydapp.com', 'www.legacydapp.com', ]
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
+ALLOWED_HOSTS += ['legacydapp.com', 'www.legacydapp.com', ]
 if DEBUG:
     ALLOWED_HOSTS += ['localhost', 'local', '127.0.0.1', ]
 
