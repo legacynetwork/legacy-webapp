@@ -7,6 +7,5 @@ class MessageForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea)
 
 
-
 class EmailForm(forms.Form):
     email = forms.EmailField()

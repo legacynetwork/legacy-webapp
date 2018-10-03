@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import EmailMessage, EmailSuscriber
+from .models import Message, EmailSuscriber
 
 
 class EmailMessageAdmin(admin.ModelAdmin):
@@ -11,5 +11,5 @@ class EmailSuscriberAdmin(admin.ModelAdmin):
     list_display = ['__str__', 'created', 'unique']
 
 
-admin.site.register(EmailMessage, EmailMessageAdmin)
+admin.site.register(Message, EmailMessageAdmin)
 admin.site.register(EmailSuscriber, EmailSuscriberAdmin)
