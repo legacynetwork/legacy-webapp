@@ -15,8 +15,10 @@ class HomeView(TemplateView):
 class EmailView(SuccessMessageMixin, FormView):
     template_name = 'home.html'
     form_class = EmailForm
-    success_url = '/#subscribe'
     success_message = "Thanks, we'll keep you up to date"
+    # TODO: success_url whould be determined with get_success_url and
+    # check to see if it's the top or bottom form that was used.
+    success_url = '/#subscribe'
 
 
     def form_valid(self, form):

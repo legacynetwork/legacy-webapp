@@ -17,6 +17,25 @@
                 </div>
             </section>
 
+        <!-- email form -->
+            <section id="subscribe" class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
+                <div class="inner small">
+                    <h2 class="fontcolorwhite">Stay up to date...</h2>
+                    <form method="post" action="{% url 'support:thanks_email' %}#subscribe1">
+                        {% csrf_token %}
+                        <div class="fields">
+                            <div class="field">
+                                <input type="email" name="email" id="email" value="" placeholder="email@domain.com"/>
+                            </div>
+                        </div>
+                        <ul class="actions special">
+                            <li><input class="fontcolorwhite" type="submit" name="submit" id="submit" value="Subscribe" /></li>
+                        </ul>
+                    </form>
+
+                </div>
+            </section>
+
         <!-- resources -->
             <section class="spotlight style2 colorlegacyblue orient-right content-align-left image-position-center onscroll-image-fade-in fontcolorwhite" id="first">
                 <div class="content">
@@ -361,10 +380,10 @@
             </section>
 
         <!-- email form -->
-            <section id="subscribe" class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
+            <section id="subscribe2" class="wrapper style1 colorlegacyblue fontcolorwhite align-center">
                 <div class="inner small">
                     <h2 class="fontcolorwhite">Stay up to date...</h2>
-                    <form method="post" action="{% url 'support:thanks_email' %}#subscribe">
+                    <form method="post" action="{% url 'support:thanks_email' %}#subscribe2">
                         {% csrf_token %}
                         <div class="fields">
                             <div class="field">
