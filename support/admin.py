@@ -9,6 +9,7 @@ class EmailMessageAdmin(admin.ModelAdmin):
 
 class EmailSuscriberAdmin(admin.ModelAdmin):
     list_display = ['__str__', 'created', 'unique']
+    list_filter = ['unique', ]
 
 
 admin.site.register(Message, EmailMessageAdmin)
