@@ -16,3 +16,5 @@ Pillow
 django-sendgrid-v5
 django-eth
 django-eth-events
+django-phonenumbers
+Werkzeug

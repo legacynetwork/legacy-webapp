@@ -11,7 +11,7 @@ SECRET_KEY = env(
     default='local-secret-key'
     )
 
-DEBUG = env.bool('DJANGO_DEBUG', False)
+DEBUG = env.bool('DJANGO_DEBUG', True)
 
 ALLOWED_HOSTS = ['legacydapp.com', 'www.legacydapp.com', ]
 if DEBUG:
@@ -91,8 +91,12 @@ WSGI_APPLICATION = 'legacy.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE', default='postgres:///legacy'),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
